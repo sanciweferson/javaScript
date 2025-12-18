@@ -3,46 +3,74 @@
 <head>
   <meta charset="UTF-8">
   <title>Variáveis em JavaScript</title>
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-      display: flex;
-      height: 100vh;
-      align-items: center;
-      justify-content: center;
+    :root {
+      --primary: #6366f1;
+      --bg: #0f172a;
+      --card-bg: #020617;
+      --text: #e5e7eb;
     }
 
-    .menu {
-      background: #020617;
-      padding: 2rem 3rem;
-      border-radius: 12px;
-      box-shadow: 0 20px 40px rgba(0,0,0,.4);
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 30px;
+    }
+
+    h1 {
       text-align: center;
     }
 
-    a {
-      display: block;
-      margin: 1rem 0;
-      color: #38bdf8;
-      text-decoration: none;
-      font-size: 1.2rem;
+    .nav {
+      display: flex;
+      gap: 12px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .nav button {
+      background: var(--card-bg);
+      color: var(--text);
+      border: 1px solid #334155;
+      padding: 10px 18px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 16px;
+    }
+
+    .nav button:hover,
+    .nav button.active {
+      background: var(--primary);
+      color: #fff;
     }
   </style>
 </head>
 <body>
 
-  <div class="menu">
-    <h1>JavaScript — Variáveis</h1>
-    <a href="./variables/var/">var</a>
-    <a href="./variables/let/">let</a>
-    <a href="./variables/const/">const</a>
-  </div>
+  <h1>var, let e const — entendendo o motor do JavaScript</h1>
+
+  <nav class="nav">
+    <button data-page="var"
+      onclick="irPara('variables/var/')">var</button>
+
+    <button data-page="let"
+      onclick="irPara('variables/let/')">let</button>
+
+    <button data-page="const"
+      onclick="irPara('variables/const/')">const</button>
+  </nav>
+
+  <script>
+    function irPara(pagina) {
+      window.location.href = pagina;
+    }
+  </script>
 
 </body>
 </html>
