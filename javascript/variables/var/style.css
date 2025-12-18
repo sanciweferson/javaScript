@@ -1,0 +1,140 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Consolas', 'Courier New', monospace; /* Fonte mais técnica */
+  background-color: #f4f4f4;
+  padding: 30px;
+  color: #333;
+}
+
+/* Títulos */
+.page-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #005cc5;
+}
+
+h2 {
+  font-size: 1.8rem;
+  margin: 40px 0 20px 0;
+  color: #333;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+h3.card-title {
+  font-size: 1.2rem;
+  color: #d73a49;
+  margin-bottom: 10px;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #ccc;
+  margin: 40px 0;
+}
+
+.explanation {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  padding: 0 10px;
+  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  color: #555;
+}
+
+/* Card que simula código */
+.code-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 20px auto;
+  border-left: 5px solid #005cc5; /* Linha de destaque */
+}
+
+/* Bloco de Código */
+.code-block {
+  background: #f8f8f8;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  margin-bottom: 15px;
+}
+
+.code-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Paleta de Cores para JS */
+.js-keyword {
+  color: #d73a49; /* Vermelho/Keyword */
+  font-weight: bold;
+}
+
+.js-variable {
+  color: #005cc5; /* Azul/Variável */
+}
+
+.js-operator {
+  color: #24292e;
+  font-weight: bold;
+}
+
+.js-value {
+  color: #22863a; /* Verde/String ou Valor */
+  font-style: italic;
+}
+
+.function-name {
+  color: #6f42c1; /* Roxo/Função */
+}
+.function-call {
+  color: #6f42c1;
+}
+
+/* Resultados e Comentários */
+.result {
+  font-weight: bold;
+  margin-top: 10px;
+  border-top: 1px dashed #ddd;
+  padding-top: 10px;
+}
+
+.log {
+  color: #be1717; /* Log */
+}
+
+.output-value {
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+.undefined {
+  color: #dc2626; /* Vermelho/Undefined */
+  background-color: #fee2e2;
+}
+
+.defined {
+  color: #16a34a; /* Verde/Valor Atribuído */
+  background-color: #dcfce7;
+}
+
+.js-comment {
+  color: #6a737d; /* Cinza/Comentário */
+  font-style: italic;
+  margin-top: 5px;
+  font-size: 0.9em;
+}

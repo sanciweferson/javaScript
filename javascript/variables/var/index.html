@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>var, hoisting e memória — aula profunda e visual</title>
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #e2e8f0;
+      --code-bg: #000000;
+      --danger: #ef4444;
+      --success: #22c55e;
+      --muted: #94a3b8;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Fira Code', monospace;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    h1, h3 {
+      text-align: center;
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 40px;
+    }
+
+    .code-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 30px auto;
+      max-width: 900px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      border: 1px solid #334155;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+    }
+
+    .code-block {
+      background: var(--code-bg);
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      border-left: 4px solid var(--primary);
+      font-size: 0.9rem;
+    }
+
+    .js-keyword { color: #f472b6; font-weight: bold; }
+    .js-variable { color: #38bdf8; }
+    .js-value { color: #4ade80; font-style: italic; }
+
+    .result {
+      font-family: monospace;
+      font-weight: bold;
+    }
+
+    .undefined { color: var(--danger); }
+    .defined { color: var(--success); }
+    .error { color: var(--danger); }
+
+    .explanation {
+      background: rgba(99, 102, 241, 0.1);
+      border-left: 4px solid var(--primary);
+      padding: 15px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.nav button {
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid #334155;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav button:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+    .nav button.active {
+  background: var(--primary);
+  color: white;
+}
+
+  </style>
+</head>
+
+<body>
+<nav class="nav">
+  <button onclick="irPara('../var/')">var</button>
+  <button onclick="irPara('../let/')">let</button>
+  <button onclick="irPara('../const/')">const</button>
+</nav>
+<h1>var, hoisting e memória — entendendo o motor do JavaScript</h1>
+
+<div class="code-card">
+  <h3>1. Declaração simples</h3>
+  <div class="code-block">
+    <span class="js-keyword">var</span>
+    <span class="js-variable">nome</span> =
+    <span class="js-value" id="js_value1"></span>
+  </div>
+  <div class="result">
+    console.log(nome) → <span class="defined">"Sanciweferson"</span>
+  </div>
+  <div class="explanation">
+    A variável é criada e recebe valor no mesmo ponto.
+    O hoisting existe, mas não fica visível aqui.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>2. Redeclaração com var</h3>
+  <div class="code-block">
+    <span class="js-keyword">var</span> nome =
+    <span class="js-value" id="js_value2"></span>
+  </div>
+  <div class="result">
+    console.log(nome) → <span class="defined">"San"</span>
+  </div>
+  <div class="explanation">
+    <code>var</code> permite redeclarar no mesmo escopo.
+    Flexível, porém perigoso.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>3. Reatribuição</h3>
+  <div class="code-block">
+    nome = <span class="js-value" id="js_value3"></span>
+  </div>
+  <div class="result">
+    console.log(nome) → <span class="defined">"Weferson"</span>
+  </div>
+  <div class="explanation">
+    A variável continua sendo a mesma.
+    Apenas o valor apontado muda.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>4. Hoisting básico</h3>
+  <div class="code-block">
+    console.log(hoist)<br>
+    <span class="js-keyword">var</span> hoist =
+    <span class="js-value">"JS"</span>
+  </div>
+  <div class="result">
+    Resultado → <span id="res-hoist" class="undefined"></span>
+  </div>
+  <div class="explanation">
+    Na criação do contexto, o JavaScript faz:
+    <br><br>
+    <code>var hoist = undefined</code>
+    <br><br>
+    A atribuição só ocorre depois.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>5. Hoisting em função (shadowing)</h3>
+  <div class="code-block">
+    var valor = 100<br><br>
+    function teste() {<br>
+    &nbsp;&nbsp;return valor<br>
+    &nbsp;&nbsp;<span class="js-keyword">var</span> valor = 10<br>
+    }
+  </div>
+  <div class="result">
+    Resultado → <span id="res-func" class="undefined"></span>
+  </div>
+  <div class="explanation">
+    A variável local sobe e esconde a externa.
+    Mesmo sem valor, ela já existe.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>6. var ignora blocos</h3>
+  <div class="code-block">
+    for (<span class="js-keyword">var</span> i = 0; i &lt; 1; i++) {}<br>
+    console.log(i)
+  </div>
+  <div class="result">
+    Resultado → <span id="res-loop" class="defined"></span>
+  </div>
+  <div class="explanation">
+    Blocos não criam escopo para <code>var</code>.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>7. Função atribuída a variável</h3>
+  <div class="code-block">
+    dizerOi()<br>
+    <span class="js-keyword">var</span> dizerOi = function () {}
+  </div>
+  <div class="result">
+    Resultado → <span id="res-fn" class="error"></span>
+  </div>
+  <div class="explanation">
+    Só o nome sobe.
+    A função ainda não existe.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>8. Closure com var</h3>
+  <div class="code-block">
+    var funcoes = []<br><br>
+    for (<span class="js-keyword">var</span> i = 0; i &lt; 3; i++) {<br>
+    &nbsp;&nbsp;funcoes.push(function () { return i })<br>
+    }
+  </div>
+  <div class="result">
+    f[0]() → <span id="c1"></span><br>
+    f[1]() → <span id="c2"></span><br>
+    f[2]() → <span id="c3"></span>
+  </div>
+  <div class="explanation">
+    Todas fecham sobre a mesma variável.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>9. Closure correto usando função</h3>
+  <div class="code-block">
+    for (<span class="js-keyword">var</span> i = 0; i &lt; 3; i++) {<br>
+    &nbsp;&nbsp;(function (n) {<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;funcoes.push(function () { return n })<br>
+    &nbsp;&nbsp;})(i)<br>
+    }
+  </div>
+  <div class="result">
+    Resultado → <span class="defined">0, 1, 2</span>
+  </div>
+  <div class="explanation">
+    Criamos um escopo novo manualmente.
+  </div>
+</div>
+
+<div class="code-card">
+  <h3>10. Memória e Garbage Collector</h3>
+  <div class="code-block">
+    <span class="js-keyword">var</span>
+    <span class="js-variable">usuario</span> = { nome:
+    <span class="js-value">"Sanciweferson"</span> }
+  </div>
+  <div class="code-block">
+    <span class="js-variable">usuario</span> =
+    <span class="js-value">null</span>
+  </div>
+  <div class="result">
+    Estado → <span class="defined">objeto sem referência</span>
+  </div>
+  <div class="explanation">
+    O JavaScript usa <strong>Mark-and-Sweep</strong>.
+    <br><br>
+    <code>null</code> não apaga o objeto.
+    Remove a ponte até ele.
+    <br><br>
+    Sem referências, o GC limpa.
+  </div>
+</div>
+
+<script>
+  var js_value1 = document.getElementById("js_value1")
+  var js_value2 = document.getElementById("js_value2")
+  var js_value3 = document.getElementById("js_value3")
+  var name = "Sanciweferson";
+  js_value1.innerHTML = `${name}`
+  name = "San";
+  js_value2.innerHTML = `${name}`
+  name = "Weferson";
+js_value3.innerHTML = `${name}`
+  document.getElementById("res-hoist").textContent = hoist;
+  var hoist = "JS";
+
+  var valor = 100;
+  function teste() {
+    return valor;
+    var valor = 10;
+  }
+  document.getElementById("res-func").textContent = teste();
+
+  for (var i = 0; i < 1; i++) {}
+  document.getElementById("res-loop").textContent = i;
+
+  try {
+    dizerOi();
+  } catch {
+    document.getElementById("res-fn").textContent = "TypeError";
+  }
+  var dizerOi = function () {};
+
+  var funcoes = [];
+  for (var i = 0; i < 3; i++) {
+    funcoes.push(function () { return i; });
+  }
+
+  document.getElementById("c1").textContent = funcoes[0]();
+  document.getElementById("c2").textContent = funcoes[1]();
+  document.getElementById("c3").textContent = funcoes[2]();
+</script>
+<script>
+  function irPara(pagina) {
+    window.location.href = pagina;
+  }
+
+  const paginaAtual = window.location.pathname.split("/").pop();
+
+  document.querySelectorAll(".nav button").forEach(btn => {
+    if (btn.dataset.page === paginaAtual) {
+      btn.classList.add("active");
+    }
+  });
+</script>
+</body>
+</html>
