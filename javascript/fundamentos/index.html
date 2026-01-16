@@ -74,7 +74,280 @@
 
       </ul>
     </section>
+    <!-- ================= CARD 2: Linha do Tempo ================= -->
+    <section class="card card-timeline">
+      <h2>1.2 Linha do Tempo</h2>
+      <ul class="info-list infor-list-timeline">
+        <li>
+          <strong class="year">1995</strong>
+          <p><strong>Nascimento:</strong> Criado por Brendan Eich em apenas 10 dias na Netscape.</p>
+        </li>
+        <li>
+          <strong class="year">1997</strong>
+          <p><strong>Padronização:</strong> Torna-se ECMAScript.</p>
+        </li>
+        <li>
+          <strong class="year">2009</strong>
+          <p><strong>Node.js:</strong> JavaScript chega ao backend.</p>
+        </li>
+        <li>
+          <strong class="year">2015</strong>
+          <p><strong>ES6:</strong> Grande evolução da linguagem.</p>
+        </li>
+      </ul>
+    </section>
 
+      <!-- 1.3 Por que o nome JavaScript -->
+      <section class="card card-timeline">
+        <h2>1.3 Por que o nome JavaScript</h2>
+        <ul class="info-list">
+          <li>
+            <strong>Marketing</strong>
+            <p>O nome JavaScript surgiu para aproveitar a popularidade do Java nos anos 90, mesmo sendo linguagens
+              diferentes.</p>
+          </li>
+          <li>
+            <strong>JavaScript ≠ Java</strong>
+            <p>São linguagens distintas: Java é compilada e tipada, JavaScript é interpretada e dinâmica.</p>
+          </li>
+          <li>
+            <strong>Nome oficial</strong>
+            <p>ECMAScript é a especificação que define como o JavaScript deve funcionar.</p>
+          </li>
+        </ul>
+      </section>
+
+
+      <!-- 1.4 O que JavaScript não é -->
+      <section class="card card-timeline">
+        <h2>1.4 O que JavaScript não é</h2>
+        <ul class="info-list">
+          <li>
+            <strong>Não é Java</strong>
+            <p>Apesar de algumas semelhanças na sintaxe, JavaScript e Java são linguagens diferentes, com arquitetura e
+              execução distintas.</p>
+          </li>
+          <li>
+            <strong>Não é só frontend</strong>
+            <p>Além de rodar em navegadores, JavaScript também funciona em servidores (Node.js), aplicativos de desktop
+              (Electron) e dispositivos IoT.</p>
+          </li>
+          <li>
+            <strong>Não é simples</strong>
+            <p>Tem recursos avançados como modelo assíncrono, callbacks, Promises e engines otimizadas (como V8) que
+              aumentam sua complexidade.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 2️⃣ JavaScript e o Ambiente -->
+      <section class="card card-timeline">
+        <h2>2️⃣ JavaScript e o Ambiente</h2>
+      
+        <h3>2.1 JavaScript Engine</h3>
+        <ul class="info-list">
+          <li>
+            <strong>O que é</strong>
+            <p>Software que interpreta, compila e executa JavaScript.</p>
+          </li>
+          <li>
+            <strong>Exemplos</strong>
+            <p>V8, SpiderMonkey, JavaScriptCore.</p>
+          </li>
+          <li>
+            <strong>Função</strong>
+            <p>Transformar código em instruções executáveis (JIT).</p>
+          </li>
+        </ul>
+</section>
+<section  class="card card-timeline">
+  <h3>2.2 JavaScript Runtime</h3>
+  <ul class="info-list">
+    <li>
+      <strong>Engine x Runtime</strong>
+      <p>Engine executa. Runtime fornece APIs.</p>
+    </li>
+    <li>
+      <strong>Browser</strong>
+      <p>DOM, eventos, Web APIs.</p>
+    </li>
+    <li>
+      <strong>Node.js</strong>
+      <p>Arquivos, rede, processos.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="card card-timeline">
+<h3>2.3 O papel do navegador</h3>
+<ul class="info-list">
+  <li>
+    <strong>DOM</strong>
+    <p>Representação do HTML.</p>
+  </li>
+  <li>
+    <strong>BOM</strong>
+    <p>window, history, location.</p>
+  </li>
+  <li>
+    <strong>Web APIs</strong>
+    <p>fetch, setTimeout, eventos.</p>
+  </li>
+</ul>
+</section>
+
+<!-- 3️⃣ Arquivo .js e o Processo de Execução -->
+<section class="card card-timeline">
+  <h2>3️⃣ Arquivo .js e o Processo de Execução</h2>
+
+  <h3>3.1 O que é um arquivo .js</h3>
+  <ul class="info-list">
+    <li><strong>Source file</strong>
+      <p>Um arquivo <code>.js</code> é um arquivo de origem que contém código JavaScript.</p>
+    </li>
+    <li><strong>Source code</strong>
+      <p>O conteúdo escrito pelo desenvolvedor, antes de qualquer interpretação ou execução pela engine.</p>
+    </li>
+    <li><strong>Código como texto</strong>
+      <p>Inicialmente, o JavaScript existe apenas como texto puro, sem significado computacional até ser processado.
+      </p>
+    </li>
+  </ul>
+  </section>
+
+  <section class="card card-timeline">
+    <h3>3.2 Quando o JavaScript começa a existir</h3>
+    <ul class="info-list">
+      <li><strong>Script loading</strong>
+        <p>O JavaScript passa a existir quando o arquivo é carregado pelo navegador ou Node.js.</p>
+      </li>
+      <li><strong>Inclusão no HTML</strong>
+        <p>Via tag <code>&lt;script&gt;</code>, embutido ou externo.</p>
+      </li>
+      <li><strong>Execução no Node.js</strong>
+        <p>O JavaScript passa a existir quando carregado pelo runtime via linha de comando.</p>
+      </li>
+    </ul>
+
+  </section>
+
+  <section class="card card-timeline">
+    <h3>3.3 Parsing e leitura do código</h3>
+    <ul class="info-list">
+      <li><strong>Análise léxica</strong>
+        <p>O código é lido caractere por caractere para identificar estruturas válidas.</p>
+      </li>
+      <li><strong>Tokens</strong>
+        <p>O código é quebrado em unidades mínimas significativas: palavras-chave, operadores e identificadores.</p>
+      </li>
+      <li><strong>Parsing</strong>
+        <p>Os tokens são organizados conforme as regras gramaticais da linguagem.</p>
+      </li>
+      <li><strong>AST (Abstract Syntax Tree)</strong>
+        <p>Estrutura em árvore que representa o código de forma abstrata para execução e otimização.</p>
+      </li>
+    </ul>
+    </section>
+
+
+    <!-- 4️⃣ Execution Context -->
+    <section class="card card-timeline">
+      <h2>4️⃣ Execution Context (O Coração do JavaScript)</h2>
+    
+      <h3>4.1 O que é Execution Context</h3>
+      <ul class="info-list">
+        <li><strong>Definição formal</strong>
+          <p>Ambiente interno criado pela engine para armazenar, organizar e executar o código.</p>
+        </li>
+        <li><strong>Por que ele existe</strong>
+          <p>Define onde variáveis, funções e o valor de <code>this</code> vivem durante a execução.</p>
+        </li>
+        <li><strong>Por que nada roda fora dele</strong>
+          <p>Todo código JS precisa de um Execution Context para ser interpretado e executado.</p>
+        </li>
+      </ul>
+</section>
+<section class="card card-timeline">
+  <h3>4.2 Tipos de Execution Context</h3>
+  <ul class="info-list">
+    <li><strong>Global Execution Context</strong>
+      <p>Contexto criado quando o programa inicia. Existe apenas um por aplicação.</p>
+    </li>
+    <li><strong>Function Execution Context</strong>
+      <p>Criado cada vez que uma função é invocada, com escopo e variáveis locais.</p>
+    </li>
+    <li><strong>Eval Execution Context</strong>
+      <p>Criado pela função <code>eval()</code>, raramente usado e desaconselhado.</p>
+    </li>
+  </ul>
+</section>
+<section class="card card-timeline">
+  <h3>4.3 Fases do Execution Context</h3>
+  <ul class="info-list">
+    <li><strong>Creation Phase</strong>
+      <p>Fase em que a engine cria o contexto, registra variáveis e define <code>this</code>.</p>
+    </li>
+    <li><strong>Execution Phase</strong>
+      <p>Fase em que o código é executado linha por linha.</p>
+    </li>
+  </ul>
+</section>
+
+<!-- 5️⃣ Léxico, Escopo e Ambiente -->
+<section class="card card-timeline">
+  <h2>5️⃣ Léxico, Escopo e Ambiente</h2>
+
+  <h3>5.1 O Conceito de "Léxico"</h3>
+  <p class="intro-text">Léxico refere-se ao <strong>escopo definido pela posição do código</strong>. Ou seja, onde
+    você escreve suas declarações determina seu alcance.</p>
+
+  <ul class="info-list">
+    <li><strong>Escopo Estático</strong>
+      <p>O JS decide o alcance de variáveis ao escrever o código, não ao executar.</p>
+    </li>
+    <li><strong>Escopo Léxico</strong>
+      <p>Funções "lembram" do ambiente onde foram criadas e mantêm acesso às variáveis daquele escopo.</p>
+    </li>
+    <li><strong>Escopo Léxico vs Dinâmico</strong>
+      <p>JS usa escopo léxico. Escopo dinâmico, baseado na pilha de chamadas, não é adotado.</p>
+    </li>
+  </ul>
+</section>
+
+<section class="card card-timeline">
+  <h3>5.2 Ambiente Léxico (Lexical Environment)</h3>
+  <p class="definition"><strong>Ambiente léxico</strong> é a estrutura interna do JS responsável por
+    <strong>registrar identificadores</strong>, o <strong>escopo</strong> onde foram criados e a <strong>referência
+      ao valor</strong> armazenado na memória.
+  </p>
+  
+  <ul class="info-list">
+    <li><strong>Environment Record</strong>
+      <p>Armazena todas as declarações de variáveis, funções e parâmetros dentro de um escopo.</p>
+    </li>
+    <li><strong>Outer Lexical Environment</strong>
+      <p>Referência ao ambiente externo, permitindo acesso a variáveis de escopos superiores.</p>
+    </li>
+    <li><strong>Scope Chain</strong>
+      <p>Cadeia de ambientes léxicos usada para resolver identificadores não encontrados no escopo atual.</p>
+    </li>
+  </ul>
+</section>
+<section class="card card-timeline">
+<h3>5.3 Variable Environment</h3>
+<ul class="info-list">
+  <li><strong>Diferença para Lexical Environment</strong>
+    <p>Usado especificamente para <code>var</code>, enquanto o Lexical Environment gerencia <code>let</code>,
+      <code>const</code> e funções em blocos.
+    </p>
+  </li>
+  <li>
+    <p>Funciona como "lado B" do ambiente léxico: explica porque <code>var</code> não respeita blocos
+      <code>if</code> ou <code>for</code>, apenas funções.
+    </p>
+  </li>
+</ul>
+</section>
   </main>
 </body>
 
