@@ -250,13 +250,21 @@ code{
     font-size: 2rem;
   }
   .card {
-    margin: 0.75rem auto;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    
+width: 100%;
+
   }
+
+  .card-center{
+    max-width: 700px;
+    margin: 0 auto;
+  
+  }
+.card-timeline{
+  max-width: 700px;
+  margin: 0 auto;
+
+}
 }
 
 
@@ -299,6 +307,7 @@ code{
   max-width: 65ch;
   line-height: 1.6;
 }
+
 }
 
 

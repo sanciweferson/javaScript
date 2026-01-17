@@ -5,15 +5,17 @@
 ========================= */
 
 /* Palavras-chave: var, let, const, function */
-.palava-chave {
+.palavra-chave {
   font-size: 1.2rem;
   color: var(--primary);
+  
 }
 
 /* Identificadores: nomes de variáveis, funções */
 .identificador {
   font-size: 1.2rem;
   color: var(--foreground);
+  
 }
 
 /* Valores literais: números, strings, boolean */
@@ -40,6 +42,7 @@
 
 
 .explanation {
+  max-width: 100%;
   margin-top: 0.5rem;
   font-size: 1rem;
   line-height: 1.9;
@@ -70,6 +73,82 @@
   background-color: var(--card);
   color: var(--chart-3);
 }
+.undefined{
+  color: var(--destructive);
+}
 
 
 
+.code-block {
+  background-color: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin: 1rem 0;
+
+  font-family: monospace;
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  overflow-x: auto;
+}
+
+/* Remove aparência padrão do <code> */
+.code-block code {
+  background: none;
+  padding: 0;
+  color: var(--foreground);
+  display: block;
+  white-space: pre;
+}
+
+/* Palavras-chave JS */
+.code-block .js-keyword {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Comentários */
+.code-block .comment {
+  color: var(--muted-foreground);
+  font-style: italic;
+}
+
+/* Valores numéricos ou literais */
+.code-block .value {
+  color: var(--chart-3);
+}
+
+/* Destaque leve para linhas importantes */
+.code-block .highlight {
+  background-color: var(--muted);
+  padding: 0.1rem 0.2rem;
+  border-radius: 0.25rem;
+}
+#js-value-7{
+ 
+  color: var(--chart-3);
+}
+@media (min-width: 768px) {
+ 
+  .explanation{
+    width: 100%;
+  }
+  .code-block{
+    width: 100%;
+  
+  }
+
+}
+
+@media (min-width: 1024px) {
+ 
+  .explanation{
+    width: 100%;
+  }
+  .code-block{
+    width: 100%;
+  
+  }
+
+}
