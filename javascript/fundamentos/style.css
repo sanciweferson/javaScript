@@ -295,6 +295,10 @@ code{
   .nav__theme__desktop {
     display: block;
   }
+  .explanation{
+  max-width: 65ch;
+  line-height: 1.6;
+}
 }
 
 

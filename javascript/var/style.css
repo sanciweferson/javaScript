@@ -37,3 +37,39 @@
 .defined {
   color: var(--chart-2);
 }
+
+
+.explanation {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.9;
+
+  color: var(--foreground);
+  background-color: var(--muted);
+
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+
+  border-left: 3px solid var(--primary);
+}
+
+/* Destaque conceitual forte */
+.explanation strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* Código inline dentro da explicação */
+.explanation code {
+  font-family: monospace;
+  font-size: 0.95em;
+
+  padding: 0.15em 0.35em;
+  border-radius: 0.35rem;
+
+  background-color: var(--card);
+  color: var(--chart-3);
+}
+
+
+

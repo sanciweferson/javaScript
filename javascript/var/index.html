@@ -50,7 +50,7 @@
   <section class="card card-center">
     <h3>1. Declaração com <code>var</code></h3>
     
-    <div class="code-block">
+    <div>
       <span class="palava-chave">var</span>
       <span class="identificador">name</span>
       <span class="operator">=</span>
@@ -60,7 +60,67 @@
       <div class="result">
         console.log(nome) → <span class="defined">"Sanciweferson"</span>
       </div>
+          <p class="explanation">
+            Antes de qualquer linha rodar, o JavaScript faz uma fase invisível chamada
+            <strong>fase de criação</strong>.
+            Nela, o motor já cria a variável <code>name</code> e coloca o valor
+            <code>undefined</code> na memória.
+            
+            Só depois, na fase de execução, o valor
+            <code>"Sanciweferson"</code> é atribuído.
+            
+            O hoisting acontece aqui, mas como você acessa a variável só depois da atribuição,
+            ele passa despercebido.
+          </p>
   </section>
+
+  <section class="card card-center">
+    <h3>2. Redeclaração silenciosa</h3>
+    
+    <div >
+      <span class="palava-chave">var</span>
+      <span class="identificador">name</span>
+      <span class="operator">=</span>
+      <span class="value" id="js-value-2"></span>
+    </div>
+    
+    <div class="result">
+      console.log(nome) → <span class="defined">"San"</span>
+    </div>
+    
+    <div class="explanation">
+      <code>var</code> permite declarar a mesma variável mais de uma vez no mesmo escopo.
+      
+      O motor verifica: a variável já existe?
+      Se sim, ele ignora a nova declaração e executa apenas a atribuição.
+      
+      Não há erro, aviso ou proteção.
+      Esse comportamento é um dos principais motivos do <code>var</code> ser considerado
+      perigoso em código grande.
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="card car-center">
+    <h3>3. Reatribuição</h3>
+  
+    <div class="code-block">
+      <span class="identificador">name</span>
+      <span class="operator">=</span> <span class="value" id="js-value-3"></span>
+    </div>
+  
+    <div class="result">
+      console.log(nome) → <span class="defined">"Weferson"</span>
+    </div>
+  
+    <div class="explanation">
+      Aqui não existe nova variável.
+      Apenas o valor apontado por <code>name</code> é trocado.
+      Variáveis em JavaScript funcionam como etiquetas que apontam para valores na memória.
+      Trocar o valor não muda a variável, apenas o conteúdo referenciado.
+    </div>
+  </section>
+
 </main>
   <script type="module">
   
