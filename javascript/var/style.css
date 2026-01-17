@@ -1,0 +1,39 @@
+@import "../fundamentos/root.css";
+
+/* =========================
+   SINTAXE DE CÓDIGO
+========================= */
+
+/* Palavras-chave: var, let, const, function */
+.palava-chave {
+  font-size: 1.2rem;
+  color: var(--primary);
+}
+
+/* Identificadores: nomes de variáveis, funções */
+.identificador {
+  font-size: 1.2rem;
+  color: var(--foreground);
+}
+
+/* Valores literais: números, strings, boolean */
+.value {
+  font-size: 1rem;
+  color: var(--chart-3);
+}
+
+/* Resultado exibido (output) */
+.result {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+
+  color: var(--secondary-foreground);
+  background-color: var(--secondary);
+
+  border-radius: var(--radius);
+}
+
+/* Algo definido / válido / correto */
+.defined {
+  color: var(--chart-2);
+}

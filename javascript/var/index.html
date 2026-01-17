@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>var e hoisting — aula profunda e visual</title>
   <link rel="stylesheet" href="../fundamentos/style.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
 </head>
 <body>
+  <!-- git commit -m "estrutura inicial dos fundamentos" -->
+  <!-- git push -->
+
+
   
 <header class="header">
   <div class="flex">
@@ -15,11 +21,47 @@
     </a>
   </div>
 
-  <h1>Guia de Fundamentos <span>JavaScript</span></h1>
+  <h1>var e hoisting — aula profunda e visual</h1>
 
 
 </header>
 
+<main class="container">
+  <section class="card card-center">
+      <h2>0. O que é uma variável?</h2>
+      <ul class="info-list">
+        <li>
+          Em JavaScript, uma variável <strong>não é uma caixa</strong> que guarda valores.
+          Ela é um <strong>identificador</strong> registrado no
+          <strong>ambiente léxico</strong>, que aponta para um
+          <strong>endereço de memória</strong>.
+        </li>
+        <li>
+              <p>
+                O <strong>ambiente léxico</strong> é a estrutura interna do JavaScript responsável por
+                <strong>registrar os identificadores</strong>, definir o
+                <strong>escopo</strong> onde eles existem e manter a
+                <strong>referência ao valor</strong> armazenado na memória.
+              </p>
+        </li>
+      </ul>
+  </section>
+
+  <section class="card card-center">
+    <h3>1. Declaração com <code>var</code></h3>
+    
+    <div class="code-block">
+      <span class="palava-chave">var</span>
+      <span class="identificador">name</span>
+      <span class="operator">=</span>
+      <span class="value" id="js-value-1"></span>
+    </div>
+
+      <div class="result">
+        console.log(nome) → <span class="defined">"Sanciweferson"</span>
+      </div>
+  </section>
+</main>
   <script type="module">
   
     import { initTheme } from "../js/theme/theme.init.js"
