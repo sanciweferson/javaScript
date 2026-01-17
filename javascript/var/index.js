@@ -23,7 +23,7 @@ function teste(){
  var valor = 18
 }
 
-testeHoist.textContent = `  // hoisting → ${teste()}`
+testeHoist.textContent = `${teste()}`
 
 console.log(teste())
 
