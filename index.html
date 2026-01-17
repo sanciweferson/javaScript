@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fundamentos de JavaScript</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="javascript/fundamentos/style.css">
 </head>
 
 <body>
@@ -21,7 +22,7 @@
       <h2>Base da linguagem</h2>
       <ul class="list">
         <li><a href="javascript/fundamentos/index.html">Fundamentos</a></li>
-        <li><a href="#">var</a></li>
+        <li><a href="javascript/var/index.html">var</a></li>
         <li><a href="#">let</a></li>
         <li><a href="#">const</a></li>
       </ul>
@@ -47,6 +48,31 @@
       </ul>
     </section>
   </main>
+
+<script src="javascript/js/header.js"></script>
+
+<script type="module">
+
+  import { initTheme } from "/javascript/js/theme/theme.init.js"
+
+  window.onload = () => {
+    initTheme()
+    // agora vai abrir o menu corretamente se estava aberto antes
+  }
+
+  const darkMode = localStorage.getItem("darkMode");
+  const isDark =
+    darkMode === "true" ||
+    (darkMode === null && window.matchMedia("(prefers-color-scheme: dark)").matches);
+
+  document.documentElement.setAttribute("data-theme", isDark ? "dark" : "light");
+
+  // Atualiza ícones já na primeira renderização
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll(".icon-moon").forEach(el => el.classList.toggle("hidden", isDark));
+    document.querySelectorAll(".icon-sun").forEach(el => el.classList.toggle("hidden", !isDark));
+  });
+</script>
 </body>
 
 </html>

@@ -47,7 +47,11 @@
   --sidebar-ring: oklch(0.708 0 0); /* foco/efeito da sidebar */
 }
 
-.dark {
+[data-theme="light"] body {
+  background-color: var(--bg);
+  
+}
+[data-theme ="dark"] body{
   /* mesmas propriedades, mas invertendo cores pra modo escuro */
   --background: oklch(0.145 0 0); /* fundo escuro da página */
   --foreground: oklch(0.985 0 0); /* texto claro */
